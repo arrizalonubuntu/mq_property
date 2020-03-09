@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mq_property_mq_property,mq_property.mq_property,model_mq_property_mq_property,,1,0,0,0

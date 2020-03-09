@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="mq_property.list">
+      <field name="name">mq_property list</field>
+      <field name="model">mq_property.mq_property</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="mq_property.action_window">
+      <field name="name">mq_property window</field>
+      <field name="res_model">mq_property.mq_property</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="mq_property.action_server">
+      <field name="name">mq_property server</field>
+      <field name="model_id" ref="model_mq_property_mq_property"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="mq_property" id="mq_property.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="mq_property.menu_1" parent="mq_property.menu_root"/>
+    <menuitem name="Menu 2" id="mq_property.menu_2" parent="mq_property.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="mq_property.menu_1_list" parent="mq_property.menu_1"
+              action="mq_property.action_window"/>
+    <menuitem name="Server to list" id="mq_property" parent="mq_property.menu_2"
+              action="mq_property.action_server"/>
+    -->
+  </data>
+</odoo>
