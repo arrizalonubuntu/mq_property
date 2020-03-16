@@ -1,0 +1,34 @@
+<odoo>
+  <data>
+    <!-- model.name tree view -->
+    <record id="nup_view_tree" model="ir.ui.view">
+      <field name="name">nup.nup_data.tree</field>
+      <field name="model">nup.data</field>
+      <field name="arch" type="xml">
+        <tree string="Pembayaran NUP">
+            <field name="name"/>
+            <field name="customer_id"/>
+            <field name="payment_date"/>
+            <field name="property_id"/>
+            <field name="booking_fee"/>
+            <field name="status"/>
+        </tree>
+      </field>
+    </record>
+  
+  
+  
+
+
+<record id="nup_data_action" model="ir.actions.act_window">
+    <field name="name">Booking Fee Customer</field>
+    <field name="res_model">nup.data</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="view_id" ref="nup_view_tree"/>
+</record>
+  
+<menuitem id="nup_menu" name="Property Rumah" action="nup_data_action"/>
+
+  </data>
+</odoo>
