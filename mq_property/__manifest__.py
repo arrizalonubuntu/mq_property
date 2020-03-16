@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "mq_property",
+    'name': "Property Rumah",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Aplikasi Pembayaran Property Rumah
+        """,
 
     'description': """
-        Long description of module's purpose
+        Aplikasi untuk pembayaran hunian ramah tinggal
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Arrijal",
+    'website': "http://www.timc.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
