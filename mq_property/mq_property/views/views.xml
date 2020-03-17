@@ -1,6 +1,6 @@
 <odoo>
   <data>
-    <!-- model.name tree view -->
+    <!-- nup.data tree view -->
     <record id="nup_view_tree" model="ir.ui.view">
       <field name="name">nup.nup_data.tree</field>
       <field name="model">nup.data</field>
@@ -16,7 +16,33 @@
       </field>
     </record>
   
-  
+  <!-- nup.data form view -->
+  <record id="nup_view_form" model="ir.ui.view">
+    <field name="name">nup.nup.data.view.form</field>
+    <field name="model">nup.data</field>
+    <field name="arch" type="xml">
+      <form string="Form Data NUP">
+        <sheet>
+          <group>
+            <group string="Nomor Urut Pembayaran">
+              <field name="name"/>
+            </group>
+            <group string="Pelanggan">
+              <field name="customer_id"/>
+              <field name="payment_date"/>
+            </group>
+            <group>
+            </group>
+            <group string="Pelanggan">
+              <field name="property_id"/>
+              <field name="booking_fee"/>
+            </group>
+            <!--Continue Here-->
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
   
 
 
