@@ -7,7 +7,7 @@
         """,
 
     'description': """
-        Aplikasi untuk pembayaran hunian ramah tinggal
+        Aplikasi untuk pembayaran hunian rumah tinggal
     """,
 
     'author': "Arrijal",
@@ -24,9 +24,9 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'security/ir.model.access.csv',
     ],
     # only loaded in demonstration mode
     'demo': [

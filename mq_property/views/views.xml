@@ -1,60 +1,127 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="mq_property.list">
-      <field name="name">mq_property list</field>
-      <field name="model">mq_property.mq_property</field>
+    <!-- nup.data tree view -->
+    <record id="nup_view_tree" model="ir.ui.view">
+      <field name="name">nup.nup_data.tree</field>
+      <field name="model">nup.data</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+        <tree string="Pembayaran NUP">
+            <field name="name"/>
+            <field name="customer_id"/>
+            <field name="payment_date"/>
+            <field name="property_id"/>
+            <field name="booking_fee"/>
+            <field name="status"/>
         </tree>
       </field>
     </record>
-    -->
+  
+  <!-- nup.data form view -->
+  <record id="nup_view_form" model="ir.ui.view">
+    <field name="name">nup.nup.data.view.form</field>
+    <field name="model">nup.data</field>
+    <field name="arch" type="xml">
+      <form string="Form Data NUP">
+        <sheet>
+          <group>
+            <group string="Nomor Urut Pembayaran">
+              <field name="name"/>
+            </group>
+            <group string="Pelanggan">
+              <field name="customer_id"/>
+              <field name="payment_date"/>
+            </group>
+            <group>
+            </group>
+            <group string="Pelanggan">
+              <field name="property_id"/>
+              <field name="booking_fee"/>
+            </group>
+            <!--Continue Here-->
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  
 
-    <!-- actions opening views on models -->
-    <!--
-    <record model="ir.actions.act_window" id="mq_property.action_window">
-      <field name="name">mq_property window</field>
-      <field name="res_model">mq_property.mq_property</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    -->
 
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="mq_property.action_server">
-      <field name="name">mq_property server</field>
-      <field name="model_id" ref="model_mq_property_mq_property"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
-    </record>
-    -->
+<record id="nup_data_action" model="ir.actions.act_window">
+    <field name="name">Booking Fee Customer</field>
+    <field name="res_model">nup.data</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="view_id" ref="nup_view_tree"/>
+</record>
 
-    <!-- Top menu item -->
-    <!--
-    <menuitem name="mq_property" id="mq_property.menu_root"/>
-    -->
-    <!-- menu categories -->
-    <!--
-    <menuitem name="Menu 1" id="mq_property.menu_1" parent="mq_property.menu_root"/>
-    <menuitem name="Menu 2" id="mq_property.menu_2" parent="mq_property.menu_root"/>
-    -->
-    <!-- actions -->
-    <!--
-    <menuitem name="List" id="mq_property.menu_1_list" parent="mq_property.menu_1"
-              action="mq_property.action_window"/>
-    <menuitem name="Server to list" id="mq_property" parent="mq_property.menu_2"
-              action="mq_property.action_server"/>
-    -->
+
+
+<menuitem id="main_nup_menu" name="Property Rumah"/>
+
+<menuitem id="pilihan_nup_menu" name="Pilihan" parent="main_nup_menu"/>
+
+<menuitem id="nup_menu" name="Booking Fee" parent="pilihan_nup_menu" action="nup_data_action" />
+
+
+
+<!--customer tree view-->
+
+<record model="ir.ui.view" id="customer_tree_view">
+    <field name="name">customer.customer_data.tree</field>
+    <field name="model">customer.data</field>
+    <field name="arch" type="xml">
+        <tree string="Customer">
+            <field name="name"/>
+            <field name="alamat"/>
+            <field name="pekerjaan"/>
+            <field name="npwp"/>    
+        </tree>
+    </field>
+</record>
+
+
+<record id="customer_view_form" model="ir.ui.view">
+    <field name="name">customer.customer_data.form</field>
+    <field name="model">customer.data</field>
+    <field name="arch" type="xml">
+      <form string="Form Data Customer">
+        <sheet>
+          <group>
+          <group string="Data Customer">
+            <field name="name"/>
+            <field name="alamat"/>
+            <field name="pekerjaan"/>
+            <field name="no_hp"/>
+            <field name="npwp"/>
+          </group>  
+          <group string="Syarat-syarat">
+            <field name="ktp"/>
+            <field name="kk"/>
+            <field name="rekening"/>
+            <field name="surat_nikah"/>
+            <field name="surat_kerja"/>
+            <field name="rekening_koran"/>
+            <field name="bukti_penghasilan"/>
+          </group>
+          </group>
+      </sheet>
+    </form>
+  </field>
+</record>
+
+
+<record id="customer_data_action" model="ir.actions.act_window">
+    <field name="name">Customer</field>
+    <field name="res_model">customer.data</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+
+
+<menuitem id="customer_menu" name="Customer" parent="pilihan_nup_menu" action="customer_data_action"/>
+
+
+
   </data>
 </odoo>
